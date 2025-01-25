@@ -1,5 +1,6 @@
 const CACHE_NAME = "to-do-pwa-cache-v1";
 const FILES_TO_CACHE = [
+  //cache
   "/First PWA",
   "/First PWA/index.html",
   "/First PWA/style.css",
