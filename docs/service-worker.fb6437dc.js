@@ -1,2 +1,0 @@
-const t=["/First PWA","/First PWA/index.html","/First PWA/style.css","/First PWA/app.js","/First PWA/manifest.json","/First PWA/icons/icon-128.png","/First PWA/icons/icon-512.png"];self.addEventListener("install",s=>{s.waitUntil(caches.open("to-do-pwa-cache-v1").then(s=>s.addAll(t)))}),self.addEventListener("fetch",t=>{t.respondWith(caches.match(t.request).then(s=>s||fetch(t.request)))});
-//# sourceMappingURL=service-worker.fb6437dc.js.map
