@@ -60,15 +60,21 @@ addTaskBtn.addEventListener("click", async () => {
 });
 
 async function addTaskToFirestore(taskText) {
-  await addDoc(collection(db, "todos"), {
-    text: taskText,
-    completed: false,
-  });
+  try {
+    await addDoc(collection(db, "todos"), {
+      text: taskText,
+      completed: false,
+    });
+    console.log("Task successfully added");
+  } catch (error) {
+    console.error("Error adding task: ", error);
+  }
 }
 
 // Fetch and Render Tasks
 async function renderTasks() {
   const tasks = await getTasksFromFirestore();
+  console.log("Tasks fetched from Firestore: ", tasks);
   const taskList = document.getElementById("taskList");
   taskList.innerHTML = ""; // Clear the list before rendering
 
